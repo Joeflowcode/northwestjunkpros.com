@@ -1,0 +1,242 @@
+/* Shared UI — Northwest Estate Cleanouts
+   Button, sticky bar, nav CTA, and contrast helpers used across static pages. */
+
+:root {
+  --g: #1a3a16;
+  --g2: #2d5a27;
+  --a: #c97d1a;
+  --al: #e8a532;
+  --c: #f5f0e8;
+  --w: #faf8f4;
+  --t: #1e1e1e;
+  --m: #555;
+  --b: #ddd8cc;
+}
+
+/* —— Buttons —— */
+.btn,
+a.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  font-weight: 800;
+  line-height: 1.2;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+}
+
+.btn:hover,
+a.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary,
+.btn.primary,
+a.btn.primary,
+.btn:not(.alt):not(.outline):not(.light):not(.btn-secondary):not(.btn-outline):not(.btn-light) {
+  background: var(--a);
+  color: #fff !important;
+  border-color: var(--a);
+}
+
+.btn-primary:hover,
+.btn.primary:hover,
+a.btn.primary:hover {
+  background: #b06d14;
+  border-color: #b06d14;
+  color: #fff !important;
+}
+
+/* Solid secondary — readable on green heroes and dark bands */
+.btn-secondary,
+.btn.light,
+a.btn.light,
+.btn.alt,
+a.btn.alt {
+  background: #fff;
+  color: var(--g) !important;
+  border-color: #fff;
+}
+
+.btn-secondary:hover,
+.btn.light:hover,
+a.btn.light:hover,
+.btn.alt:hover,
+a.btn.alt:hover {
+  background: var(--c);
+  color: var(--g) !important;
+  border-color: var(--c);
+}
+
+/* Outline — always keep a filled dark/light background so labels never vanish */
+.btn-outline,
+.btn.outline,
+a.btn.outline {
+  background: rgba(15, 35, 13, 0.55);
+  color: #fff !important;
+  border: 2px solid #fff;
+}
+
+.btn-outline:hover,
+.btn.outline:hover,
+a.btn.outline:hover {
+  background: #fff;
+  color: var(--g) !important;
+}
+
+/* Outline variant for light/cream sections */
+.btn-outline-dark,
+.btn.outline-dark {
+  background: transparent;
+  color: var(--g) !important;
+  border: 2px solid var(--g);
+}
+
+.btn-outline-dark:hover,
+.btn.outline-dark:hover {
+  background: var(--g);
+  color: #fff !important;
+}
+
+/* —— Nav call CTA —— */
+.nav-cta,
+a.nav-cta,
+.navbtn,
+a.navbtn {
+  display: inline-block;
+  background: var(--a);
+  color: #fff !important;
+  padding: 9px 14px;
+  border-radius: 5px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid var(--a);
+}
+
+.nav-cta:hover,
+a.nav-cta:hover,
+.navbtn:hover,
+a.navbtn:hover {
+  background: #b06d14;
+  border-color: #b06d14;
+  color: #fff !important;
+}
+
+.nav-cta-call,
+a.nav-cta-call,
+.navbtn-call,
+a.navbtn-call {
+  background: #fff !important;
+  color: var(--g) !important;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.nav-cta-call:hover,
+a.nav-cta-call:hover,
+.navbtn-call:hover,
+a.navbtn-call:hover {
+  background: var(--c);
+  color: var(--g) !important;
+  border-color: var(--c);
+}
+
+/* —— Mobile sticky bar —— */
+.sticky {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .navlinks,
+  nav > div {
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .navbtn,
+  .navbtn-call,
+  a.navbtn,
+  a.navbtn-call {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  a.navbtn-call {
+    font-size: 0;
+  }
+
+  a.navbtn-call::before {
+    content: "Call";
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 760px) {
+  .sticky {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: var(--g);
+    padding: 10px;
+    gap: 8px;
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.28);
+    border-top: 2px solid var(--a);
+  }
+
+  .sticky a {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: clamp(0.78rem, 3.4vw, 0.95rem);
+    line-height: 1.15;
+    text-align: center;
+    border: 2px solid transparent;
+    white-space: normal;
+    color: inherit; /* overridden below with !important for contrast */
+  }
+
+  .sticky a:first-child,
+  .sticky .sticky-primary {
+    background: var(--a);
+    color: #fff !important;
+    border-color: var(--a);
+  }
+
+  .sticky a:last-child,
+  .sticky .sticky-call {
+    background: #fff;
+    color: var(--g) !important;
+    border-color: #fff;
+  }
+
+  body {
+    padding-bottom: 76px;
+  }
+}
+
+/* —— Light card / footer polish helpers —— */
+.card {
+  box-shadow: 0 1px 0 rgba(26, 58, 22, 0.04), 0 8px 24px rgba(26, 58, 22, 0.06);
+}
+
+footer a,
+.footer a {
+  color: var(--al);
+}
