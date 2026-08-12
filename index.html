@@ -88,7 +88,9 @@ h2{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1;text-transform:uppercase;mar
 .contact{background:#fff}
 .contactbox{background:linear-gradient(145deg,var(--g),var(--g2));color:#fff;padding:32px;border-radius:10px;box-shadow:0 16px 40px rgba(26,58,22,.22)}
 .contactbox h2{color:#fff}
-.contactbox a{color:#fff;font-weight:700}
+.contactbox a:not(.btn){color:#fff;font-weight:700}
+.contactbox .btn.light,.contactbox a.btn.light{background:#fff;color:var(--g)!important;border-color:#fff}
+.contactbox .btn.primary,.contactbox a.btn.primary{color:#fff!important}
 .contactbox .eyebrow{color:var(--al)}
 .footer{background:#121212;color:#ccc;padding:40px 0;border-top:3px solid var(--a)}
 .footer strong{color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;text-transform:uppercase}
