@@ -20,9 +20,9 @@ nav{position:sticky;top:0;z-index:20;background:rgba(26,58,22,.98);border-bottom
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.2rem,3.5vw,1.55rem);text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
 .brand span{color:var(--al)}
-.links{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.links{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .links a{color:#fff;text-decoration:none;font-weight:700;font-size:.9rem}
-.links .navbtn,.links .navbtn-call{font-size:.86rem}
+.links .navbtn,.links .navbtn-call{font-size:.86rem;flex:0 0 auto}
 .hero{color:#fff;background:linear-gradient(105deg,rgba(15,35,13,.96) 0%,rgba(15,35,13,.82) 48%,rgba(15,35,13,.42) 100%),url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover;min-height:78vh;display:flex;align-items:center;padding:72px 0 80px;position:relative}
 .hero:after{content:"";position:absolute;inset:auto 0 0 0;height:72px;background:linear-gradient(transparent,rgba(19,46,16,.55));pointer-events:none}
 .eyebrow{color:var(--al);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.84rem}
@@ -96,11 +96,20 @@ h2{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1;text-transform:uppercase;mar
 .footer a:hover{color:#fff}
 @media(max-width:900px){.proofgrid{grid-template-columns:repeat(3,1fr)}.whylist,.area-cols{grid-template-columns:1fr}}
 @media(max-width:760px){
+  .nav{align-items:flex-start;gap:10px}
+  .brand{max-width:58%;font-size:1.15rem}
+  .links{gap:8px;flex-wrap:nowrap}
   .links a:not(.navbtn):not(.navbtn-call){display:none}
+  .links .navbtn-call{padding:8px 10px;font-size:.78rem}
+  .links .navbtn{padding:8px 10px;font-size:.78rem}
   .hero{min-height:70vh;padding:54px 0 64px}
   .actions{flex-direction:column}
   .actions .btn{text-align:center;width:100%}
   .proofgrid,.grid,.steps,.area-links{grid-template-columns:1fr 1fr}
+}
+@media(max-width:420px){
+  .links .navbtn-call{font-size:0}
+  .links .navbtn-call:before{content:"Call";font-size:.8rem;font-weight:800}
 }
 @media(max-width:520px){.proofgrid,.grid,.steps,.area-links{grid-template-columns:1fr}.proofitem{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}}
 </style>
